@@ -63,6 +63,10 @@ long fact(int n) {
     return res;
 }
 long fact(int n) {
+    if (n < 0) {
+        printf("Error: factorial not defined for -ve values\n");
+        return -1;
+    }
     if (n <= 1) return 1;
     long res = 1;
     for (int i = 2; i < n; i++) {
