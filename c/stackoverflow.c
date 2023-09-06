@@ -2,7 +2,9 @@
 
 void f(int n) {
 	printf("f(%d)\n", n);
-	f(n+1);
+	if (n < 5) {
+		f(n+1);
+	}
 }
 
 int main() {
