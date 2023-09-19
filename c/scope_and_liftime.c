@@ -3,10 +3,10 @@
 char *global_string = "some_string";
 int y = 0;
 
-int f() {
+int f(int y) {
     static int x = 0; //static lifetime, but local scope
     x++;
-    return x;
+    return x + y;
     /**
      store x in static lifetime, meaning as long the program runs.
      x++;
@@ -14,11 +14,12 @@ int f() {
     */
 }
 
-int g() {
+int g(int y) {
     int x = 0; // local liftime and local scope.
     // Local scope means the variable is accessed only within this function
     x++;
-    return x;
+    printf("WOO\n");
+    return x + y;
     /**
     int x = 0;
     x++;
@@ -28,10 +29,10 @@ int g() {
 }
 
 int main() {
-    printf("f() = %d\n", f());
-    printf("g() = %d\n", g());
-    printf("f() = %d\n", f());
-    printf("g() = %d\n", g());
+    printf("f(1) = %d\n", f(1));
+    printf("g(1) = %d\n", g(1));
+    printf("f(1) = %d\n", f(1));
+    printf("g(1) = %d\n", g(1));
     y++;
     y--;
 }
