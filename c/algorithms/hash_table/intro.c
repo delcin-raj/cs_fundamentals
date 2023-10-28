@@ -38,16 +38,16 @@ void using_switch(int i) {
     }
 }
 
-char* num_to_str[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
 
 void using_arr(int i) {
     // if num_to_str is declared as a global variable, then we have no 
     // control over that variable. So we cannot guarantee the correct answer
+    static char* num_to_str[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
     printf("%s\n", num_to_str[i-1]);
 }
 
 void erratic() {
-    num_to_str[3] = "bomb";
+    // num_to_str[3] = "bomb";
 } 
 
 int main () {
