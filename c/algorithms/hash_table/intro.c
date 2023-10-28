@@ -50,9 +50,39 @@ void erratic() {
     // num_to_str[3] = "bomb";
 } 
 
+void str_to_int_switch (char * str) {
+    // Unfortunately not possible
+}
+
+void str_to_int_arr (char * str) {
+    static char * num_to_str[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+
+    for (int i = 0; i < 10; i++) {
+        if (str == num_to_str[i]) {
+            printf("%s = %d\n", str, i+1);
+            break;
+        }
+    }
+
+}
+
+//TODO
+int str_equals(char *s1, char *s2) {
+    // If equal return 1 else 0
+    return 0;
+}
+
 int main () {
     // If the user enters number from 1..10 print "one".."ten"
     using_arr(4);
     erratic();
     using_arr(4);
+
+    str_to_int_arr("four");
+    printf("I broke the default behaviour\n");
+    char four[] = {'f', '0', '1'};
+    str_to_int_arr(four);
+
+    // "one" -> 1
+    // "two" -> 2
 }
