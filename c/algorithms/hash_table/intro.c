@@ -1,5 +1,27 @@
 #include <stdio.h>
 
+// What is the runtime complexity of this algorithm?
+// Assume length of string 1 is m and length of string 2 is n
+// min(m, n)
+int str_equals(char *s1, char *s2) {
+    // I'm expecting that strings are null terminated
+    // x && y, if either x or y is F then x && y is false
+    while (*s1 != 0 && *s2 != 0) {
+        // The loop will terminate if at least one of the string terminates
+        if (*s1 != *s2) return 0;
+        s1++; s2++;
+    }
+    
+    // If *s1 != 0 -> False or *s2 != 0 -> False
+    // *s1 = 0 or *s2 = 0
+    // At least one of the string is terminated.
+    // "abc" ['a', 'b', 'c', 0], "abcdef" ['a', 'b', 'c', 'd', 'e', 'f', '\0']
+    // "abcd", "ab"
+    // "123", "123"
+    return *s1 == 0 && *s2 == 0; // checking if both the pointers are terminated
+}
+
+
 void using_switch(int i) {
     switch (i)
     {
@@ -43,6 +65,7 @@ void using_arr(int i) {
     // if num_to_str is declared as a global variable, then we have no 
     // control over that variable. So we cannot guarantee the correct answer
     static char* num_to_str[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+    printf("Int to string \n");
     printf("%s\n", num_to_str[i-1]);
 }
 
@@ -56,9 +79,10 @@ void str_to_int_switch (char * str) {
 
 void str_to_int_arr (char * str) {
     static char * num_to_str[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+    printf("Converting string to int\n");
 
     for (int i = 0; i < 10; i++) {
-        if (str == num_to_str[i]) {
+        if (str_equals(str,num_to_str[i])) {
             printf("%s = %d\n", str, i+1);
             break;
         }
@@ -66,21 +90,9 @@ void str_to_int_arr (char * str) {
 
 }
 
-//TODO
-int str_equals(char *s1, char *s2) {
-    // If equal return 1 else 0
-    return 0;
-}
-
 int main () {
     // If the user enters number from 1..10 print "one".."ten"
-    using_arr(4);
-    erratic();
-    using_arr(4);
-
-    str_to_int_arr("four");
-    printf("I broke the default behaviour\n");
-    char four[] = {'f', '0', '1'};
+    char four[] = {'f', 'o', 'u', 'r', 0};
     str_to_int_arr(four);
 
     // "one" -> 1
