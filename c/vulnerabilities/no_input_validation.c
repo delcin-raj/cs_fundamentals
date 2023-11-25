@@ -1,18 +1,36 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
+char* read_fixed(int len) {
+   char *buffer = malloc(len * sizeof(char));
+   scanf("%s", buffer);
+   return buffer;
+}
+
+char* read_arbitrary() {
+   int len = 5;
+   char *buffer = malloc(len * sizeof(char));
+
+   while (fgets(buffer, len, stdin)) {
+        if (strchr(buffer, '\n')) {
+            // Input successfully read
+            break;
+        } else {
+            // Input exceeds the buffer size, reallocate
+            len *= 2; // double the buffer size
+            char *new_input = realloc(buffer, len);
+            free(buffer);
+            buffer = new_input;
+        }
+   }
+   return buffer;
+}
 
 int main () {
-   char str[5];
-
-   printf("Enter a string : ");
-   scanf("%s", str);
-
-   printf("You entered: %s", str);
-
-   printf("Length of chars entered %ld", strlen(str)); // '\0' is the null character and it is put at the end of every string
-   char null;
-   null = 0;
-   null = '\0';
-
-   return(0);
+   // char *b1 = read_fixed(5);
+   char *b2 = read_arbitrary();
+   
+   // printf("b1 = %s\n", b1);
+   printf("b2 = %s\n", b2);
 }
