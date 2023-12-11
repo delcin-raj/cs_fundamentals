@@ -1,5 +1,9 @@
 .metals
 .vscode
 a.out
+<<<<<<< HEAD
 .*
 __pycache__
+=======
+*exe
+>>>>>>> f5e919848c1f62efd0588a47f1c06091aa483976
