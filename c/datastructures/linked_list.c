@@ -1,4 +1,4 @@
-#include<stddef.h>
+#include <stddef.h>
 // Recursive data structure
 typedef struct Node {
     int val;
