@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// These types are called product types
 struct point
 {
     int x;
