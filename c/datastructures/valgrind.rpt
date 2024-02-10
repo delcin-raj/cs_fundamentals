@@ -1,0 +1,286 @@
+==43822== Memcheck, a memory error detector
+==43822== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==43822== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==43822== Command: ./a.out
+==43822== Parent PID: 5595
+==43822== 
+--43822-- 
+--43822-- Valgrind options:
+--43822--    --leak-check=yes
+--43822--    --log-file=valgrind.rpt
+--43822--    -v
+--43822-- Contents of /proc/version:
+--43822--   Linux version 6.5.0-15-generic (buildd@bos03-amd64-040) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #15~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 12 18:54:30 UTC 2
+--43822-- 
+--43822-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--43822-- Page sizes: currently 4096, max supported 4096
+--43822-- Valgrind library directory: /usr/libexec/valgrind
+--43822-- Reading syms from /home/delcin/classes/cs_fundamentals/c/datastructures/a.out
+--43822-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--43822--   Considering /usr/lib/debug/.build-id/15/921ea631d9f36502d20459c43e5c85b7d6ab76.debug ..
+--43822--   .. build-id is valid
+--43822-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--43822--    object doesn't have a symbol table
+--43822--    object doesn't have a dynamic symbol table
+--43822-- Scheduler: using generic scheduler lock implementation.
+--43822-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==43822== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-43822-by-delcin-on-???
+==43822== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-43822-by-delcin-on-???
+==43822== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-43822-by-delcin-on-???
+==43822== 
+==43822== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==43822== don't want to do, unless you know exactly what you're doing,
+==43822== or are doing some strange experiment):
+==43822==   /usr/bin/vgdb --pid=43822 ...command...
+==43822== 
+==43822== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==43822==   /path/to/gdb ./a.out
+==43822== and then give GDB the following command
+==43822==   target remote | /usr/bin/vgdb --pid=43822
+==43822== --pid is optional if only one valgrind process is running
+==43822== 
+--43822-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580bcec2 (???)
+--43822-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580bcedc (???)
+--43822-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--43822--    object doesn't have a symbol table
+--43822-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+--43822--    object doesn't have a symbol table
+==43822== WARNING: new redirection conflicts with existing -- ignoring it
+--43822--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580bcec2 ???
+--43822--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x0484ee30 strlen
+--43822-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x484fcd0 (strcmp)
+--43822-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4853840 (mempcpy)
+--43822-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--43822--   Considering /usr/lib/debug/.build-id/c2/89da5071a3399de893d2af81d6a30c62646e1e.debug ..
+--43822--   .. build-id is valid
+==43822== WARNING: new redirection conflicts with existing -- ignoring it
+--43822--     old: 0x04916c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--43822--     new: 0x04916c60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==43822== WARNING: new redirection conflicts with existing -- ignoring it
+--43822--     old: 0x04916c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--43822--     new: 0x04916c60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+==43822== WARNING: new redirection conflicts with existing -- ignoring it
+--43822--     old: 0x04916c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--43822--     new: 0x04916c60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==43822== WARNING: new redirection conflicts with existing -- ignoring it
+--43822--     old: 0x04916c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--43822--     new: 0x04916c60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+--43822-- REDIR: 0x4919720 (libc.so.6:strnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49199e0 (libc.so.6:strpbrk) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49192e0 (libc.so.6:strcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4937cd0 (libc.so.6:wcsnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a6d0 (libc.so.6:memset) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4936540 (libc.so.6:wcslen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491ac10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4936370 (libc.so.6:wcschr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919260 (libc.so.6:index) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919960 (libc.so.6:rindex) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a5a0 (libc.so.6:memmove) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+==43822== Preferring higher priority redirection:
+--43822--     old: 0x04a117c0 (__memcpy_avx_unalign) R-> (2018.0) 0x04850f90 __memcpy_avx_unaligned_erms
+--43822--     new: 0x04a117c0 (__memcpy_avx_unalign) R-> (2018.1) 0x04852880 memmove
+--43822-- REDIR: 0x49363f0 (libc.so.6:wcscmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a9e0 (libc.so.6:stpncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49369b0 (libc.so.6:wmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919830 (libc.so.6:strncmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491aa70 (libc.so.6:strcasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919420 (libc.so.6:strcspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4936470 (libc.so.6:wcscpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49191d0 (libc.so.6:strcat) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491ab60 (libc.so.6:strncasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a480 (libc.so.6:bcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4922570 (libc.so.6:memrchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491c010 (libc.so.6:strchrnul) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919390 (libc.so.6:strcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491ab10 (libc.so.6:strcasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49196a0 (libc.so.6:strlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x49198d0 (libc.so.6:strncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a950 (libc.so.6:stpcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a3f0 (libc.so.6:memchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4919b00 (libc.so.6:strspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491a7d0 (libc.so.6:mempcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491aac0 (libc.so.6:strncasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x491bf80 (libc.so.6:rawmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--43822-- REDIR: 0x4a0e610 (libc.so.6:__strrchr_avx2) redirected to 0x484e810 (rindex)
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x109297: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+--43822-- REDIR: 0x4a0e400 (libc.so.6:__strchrnul_avx2) redirected to 0x4853330 (strchrnul)
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E7AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x48CB2EB: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48CB2FC: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E75C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E6C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+--43822-- REDIR: 0x49160a0 (libc.so.6:malloc) redirected to 0x4848820 (malloc)
+--43822-- REDIR: 0x4a11780 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4853440 (mempcpy)
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092D9: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092DD: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092E1: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092E5: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E7AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x48CB2EB: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48CB2FC: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E75C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E6C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+--43822-- REDIR: 0x49163e0 (libc.so.6:free) redirected to 0x484b210 (free)
+==43822== 
+==43822== HEAP SUMMARY:
+==43822==     in use at exit: 0 bytes in 0 blocks
+==43822==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==43822== 
+==43822== All heap blocks were freed -- no leaks are possible
+==43822== 
+==43822== Use --track-origins=yes to see where uninitialised values come from
+==43822== ERROR SUMMARY: 15 errors from 15 contexts (suppressed: 0 from 0)
+==43822== 
+==43822== 1 errors in context 1 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E6C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 2 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E75C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 3 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48CB2FC: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 4 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x48CB2EB: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 5 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E7AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092FC: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 6 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092E5: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 7 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092E1: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 8 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092DD: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 9 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x1092D9: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 10 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E6C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 11 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E75C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 12 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48CB2FC: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 13 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x48CB2EB: _itoa_word (_itoa.c:177)
+==43822==    by 0x48E6ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 14 of 15:
+==43822== Conditional jump or move depends on uninitialised value(s)
+==43822==    at 0x48E7AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==43822==    by 0x48D179E: printf (printf.c:33)
+==43822==    by 0x1092AE: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== 
+==43822== 1 errors in context 15 of 15:
+==43822== Use of uninitialised value of size 8
+==43822==    at 0x109297: main (in /home/delcin/classes/cs_fundamentals/c/datastructures/a.out)
+==43822== 
+==43822== ERROR SUMMARY: 15 errors from 15 contexts (suppressed: 0 from 0)
