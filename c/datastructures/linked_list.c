@@ -30,12 +30,8 @@ typedef struct SinglyListTwo {
 
 void insertFront(SinglyListOne *l, int val) {
     // initializing new node
-    SinglyNode *node = malloc(sizeof(SinglyNode));
-    node->val = val;
-    node->next = l->head;
-
-    // Updating the existing head
-    l->head = node;
+    SinglyNode node = {val, l->head};
+    l->head = &node;
 }
 
 void insertBack(SinglyListOne *l, int val) {
